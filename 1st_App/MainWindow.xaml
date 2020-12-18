@@ -1,0 +1,75 @@
+﻿<Window x:Class="_1st_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1st_App"
+        mc:Ignorable="d"
+        Title="Calculator" Height="500" Width="330"
+        KeyDown="Window_KeyDown">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*" />
+            <RowDefinition Height="45*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="60*" />
+        </Grid.RowDefinitions>
+        <!--Numbers-->
+        
+        <Button Content="7"  Grid.Row="5" Grid.Column="0" Tag="7" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn7"/>
+        <Button Content="8"  Grid.Row="5" Grid.Column="1" Tag="8" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn8"/>
+        <Button Content="9"  Grid.Row="5" Grid.Column="2" Tag="9" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn9"/>
+        <Button Content="4"  Grid.Row="6" Grid.Column="0" Tag="4" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn4"/>
+        <Button Content="5"  Grid.Row="6" Grid.Column="1" Tag="5" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn5"/>
+        <Button Content="6"  Grid.Row="6" Grid.Column="2" Tag="6" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn6"/>
+        <Button Content="1"  Grid.Row="7" Grid.Column="0" Tag="1" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn1"/>
+        <Button Content="2"  Grid.Row="7" Grid.Column="1" Tag="2" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn2"/>
+        <Button Content="3"  Grid.Row="7" Grid.Column="2" Tag="3" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn3"/>
+        <Button Content="0"  Grid.Row="8" Grid.Column="1" Tag="0" Click="NumBtn_Click" TextBlock.FontSize="25" x:Name="btn0"/>
+
+        <!--Mats buttons-->
+
+        <Button Content="/"  Grid.Row="4" Grid.Column="3"  TextBlock.FontSize="25" x:Name="btnDivide" Tag="/" Click="OperatorsBtn_Click"/>
+        <Button Content="-"  Grid.Row="5" Grid.Column="3"  TextBlock.FontSize="30" x:Name="btnMinus" Tag="-" Click="OperatorsBtn_Click"/>
+        <Button Content="&#x000D7;"  Grid.Row="6" Grid.Column="3"  TextBlock.FontSize="30" x:Name="btnTimes" Tag="*" Click="OperatorsBtn_Click"/>
+        <Button Content="+"  Grid.Row="7" Grid.Column="3"  TextBlock.FontSize="30" x:Name="btnPlus" Tag="+" Click="OperatorsBtn_Click"/>
+        <Button Content=" x^y"  Grid.Row="4" Grid.Column="0"  TextBlock.FontSize="25" x:Name="btnSquareY" Tag="^" Click="OperatorsBtn_Click"/>
+        <Button Content="="  Grid.Row="8" Grid.Column="3"  TextBlock.FontSize="30" x:Name="btnEquals" Click="BtnEquals_Click"/>
+
+        <!--Clear buttons-->
+
+        <Button Content="C"  Grid.Row="2" Grid.Column="2"  TextBlock.FontSize="25" x:Name="btnClear" Click="BtnClear_Click"/>
+        <Button Content="CE"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextBlock.FontSize="25" x:Name="btnClearEntry" Click="BtnClearEntry_Click_1"/>
+        <Button Content="&#x021D0;"  Grid.Row="2" Grid.Column="3"  TextBlock.FontSize="35" x:Name="btnBackspace" Click="BtnBackspace_Click"/>
+
+        <!--functions buttons-->
+        <Button Content="1/x"  Grid.Row="3" Grid.Column="3" TextBlock.FontSize="25"  x:Name="btnRotate" Click="BtnRotate_Click"/>
+        <Button Content=" x²"  Grid.Row="4" Grid.Column="1"  TextBlock.FontSize="25" x:Name="btnSquare" Click="BtnSquare_Click"/>
+        <Button Content="&#8730;x"  Grid.Row="4" Grid.Column="2"  TextBlock.FontSize="25"  x:Name="btnSqrt" Click="BtnSqrt_Click"/>
+
+        <!--Other buttons-->
+
+        <Button Content="&#x003C0;"  Grid.Row="3" Grid.Column="0"  TextBlock.FontSize="25" x:Name="btnPI" Click="BtnPi_Click"/>
+        <Button Content="("  Grid.Row="3" Grid.Column="1"  TextBlock.FontSize="25" x:Name="btnOpenBracket" Click="BtnOpenBracket_Click"/>
+        <Button Content=")"  Grid.Row="3" Grid.Column="2"  TextBlock.FontSize="25" x:Name="btnCloseBracket" Click="BtnCloseBracket_Click"/>
+        <Button Content="+-"  Grid.Row="8" Grid.Column="0"  TextBlock.FontSize="25" x:Name="btnPosNeg" Click="BtnPosNeg_Click"/>
+        <Button Content="."  Grid.Row="8" Grid.Column="2"  TextBlock.FontSize="30"  x:Name="btnPoint" Click="PointBtn_Click"/>
+
+        <!--Display textBox-->
+
+        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="0" TextBlock.FontSize="35" IsReadOnly="True"  TextAlignment="Right" VerticalAlignment="Bottom" Name="txtDisplay" Height="47" />
+        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="0" TextBlock.FontSize="15" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" Name="txtDisplay2" Height="22" BorderThickness="2"/>
+    </Grid>
+</Window>
